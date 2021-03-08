@@ -156,12 +156,10 @@ class Player(Thing):
                 self.change_room(next_room)
                 event, next_room = self.check_room_things(next_room)
                 events.append(event)
-                while 'Bats' in event:
+                while 'ZAP' in event:
                     event, next_room = self.check_room_things(next_room)
                     events.append(event)
                 break
-        if not events:
-            events.append('You can\'t go there.')
         self.states += events
     
     def check_room_things(self, next_room):
@@ -283,13 +281,16 @@ def start_adventure():
 
 
 def show_instructions():
-    show_help = input('SHOW INSTRUCTIONS (Y-N)? ')
-    if isinstance(show_help, str) and show_help in 'YNyn':
-        if show_help == 'Y' or show_help == 'y':
-            with open('instructions.txt') as f:
-                instructions = f.read().splitlines()
-                for line in instructions:
-                    print(line)
+    while True:
+        show_help = input('SHOW INSTRUCTIONS (Y-N)? ')
+        if isinstance(show_help, str) and show_help in 'YNyn' and show_help:
+            if show_help == 'Y' or show_help == 'y':
+                with open('instructions.txt') as f:
+                    instructions = f.read().splitlines()
+                    for line in instructions:
+                        print(line)
+            break
+        print('Please enter Y or N.')
 
 
 def describe_room(room):
@@ -308,9 +309,9 @@ def describe_room(room):
     
 def make_action(cave, player, wumpus, cur_room):
     while True:
-        shoot_move = input('SHOOT OR MOVE (S-M)? ')
-        if isinstance(shoot_move, str) and shoot_move in 'SMsm':
-            if shoot_move == 'S' or shoot_move == 's':
+        action = input('SHOOT OR MOVE (S-M)? ')
+        if isinstance(action, str) and action in 'SMsm' and action:
+            if action == 'S' or action == 's':
                 if player_shoots(player, wumpus):
                     break
             else:
