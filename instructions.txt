@@ -1,0 +1,31 @@
+Welcome to Hunt the Wumpus!
+The wumpus lives in a cave of 20 rooms. Each room has three tunnels
+leading to other rooms. (Look at a dodecahedron to see how this works.
+If you don't know what a dodecahedron is, ask someone or get thee to
+a Wikipedia.
+
+HAZARDS
+ Bottomless pits - Two rooms have bottomless pits in them. If you go
+  there, you fall into the pit (and lose!)
+ Super bats - Two other rooms have super bats. If you go there, a bat
+  grabs you and take you to some other room at random. (Which might be
+  troublesome.)
+ The Wumpus - The Wumpus is not bothered by the hazards (he has sucker
+  feet and is too big for a bat to lift.) Usually he is asleep. Two
+  things wake him up you entering his room or you shooting an arrow.
+  If the wumpus wakes, he moves one room. If you are in the room with
+  him, he might stay still (14 of the time.) After that, if he is where
+  you are, he eats you up (and you lose!)
+
+YOU
+Each turn you may move or shoot a crooked arrow.
+ Moving You can go one room (through one tunnel.)
+ Shooting Each arrow can go 1 to 5 rooms. You aim by telling the 
+  computer the rooms you want the arrow to go to. If the arrow hits the 
+  Wumpus, you win. If the arrow misses the Wumpus, it moves.
+
+WARNINGS
+When you are one room away from a hazard, the computer says
+ Wumpus 'I smell a wumpus'
+ Bat 'Bats nearby'
+ Pit 'I feel a draft'
